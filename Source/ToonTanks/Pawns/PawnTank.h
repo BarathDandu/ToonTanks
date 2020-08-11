@@ -14,6 +14,24 @@ class TOONTANKS_API APawnTank : public APawnBase
 {
 	GENERATED_BODY()
 
+public:
+
+	APawnTank();
+
+	virtual void HandleDestruction() override;
+
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	bool GetIsPlayerAlive();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
@@ -39,26 +57,6 @@ private:
 
 	void Move();
 	void Rotate();
-
-
-public:
-
-	APawnTank();
-
-	virtual void HandleDestruction() override;
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	bool GetIsPlayerAlive();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 
 	
 };
