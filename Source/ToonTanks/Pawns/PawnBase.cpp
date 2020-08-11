@@ -45,6 +45,10 @@ void APawnBase::Fire()
 //	UE_LOG(LogTemp, Warning, TEXT("Fire"));
 }
 
+void APawnBase::PawnDestroyed()
+{
+}
+
 void APawnBase::HandleDestruction()
 {
 
