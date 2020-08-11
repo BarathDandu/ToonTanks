@@ -19,8 +19,6 @@ public:
 	// Sets default values for this pawn's properties
 	APawnBase();
 
-	void PawnDestroyed();
-
 	virtual void HandleDestruction();
 
 protected:
@@ -42,7 +40,10 @@ private:
 	UHealthComponent* HealthComponent;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Projectile Type", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf < AProjectileBase> ProjectileClass;
-	UPROPERTY(EditAnywhere,  Category = "Particles")
+	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem* DeathParticle;
-	
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	USoundBase* DeathSound;
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	TSubclassOf <UCameraShake> DeathShake;
 };
